@@ -26,7 +26,7 @@
             label = "GRAVE_ESCAPE";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DELETE>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
     };
 
