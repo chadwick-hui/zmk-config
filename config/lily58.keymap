@@ -55,9 +55,9 @@
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
 // |   `    |  BT1   |  BT2   |  BT3   |  BT4   |  BT5   |                        |        |        |        |        |        | Power  |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// | TAB    |        |        |        |        |        |                        |        |        |        |        |        |        |
+// | TAB    |        |        |        |        |        |                        |        |        |   ^    |        |        |        |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// | CAPS   |        |        |        |        |        |                        |        |        |        |        |        |        |
+// | CAPS   |        |        |        |        |        |                        |        |  <-    |   v    |   ->   |        |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |        |        |        |        |        | ENTER  |      | ENTER  |        |        |        |        |        |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
@@ -65,10 +65,10 @@
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &kp GRAVE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                         &trans   &trans   &trans   &trans   &trans   &kp K_PWR
-    &kp TAB   &trans       &trans       &trans       &trans       &trans                               &trans   &trans   &trans   &trans   &trans   &trans
-    &kp CAPS  &trans       &trans       &trans       &trans       &trans                               &trans   &trans   &trans   &trans   &trans   &trans
-    &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET    &trans   &trans   &trans   &trans   &trans   &trans
+    &kp GRAVE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                         &trans   &trans   &trans   &trans    &trans   &kp K_PWR
+    &kp TAB   &trans       &trans       &trans       &trans       &trans                               &trans   &trans   &kp UP   &trans    &trans   &trans
+    &kp CAPS  &trans       &trans       &trans       &trans       &trans                               &trans   &kp LEFT &kp DOWN &kp RIGHT &trans   &trans
+    &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET    &trans   &trans   &trans   &trans    &trans   &trans
                                         &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &trans   &kp BSPC &kp ESC
              >;
 
