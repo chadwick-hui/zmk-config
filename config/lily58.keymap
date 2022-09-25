@@ -21,12 +21,12 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
-        bsdel: backspace_delete {
+        gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DELETE";
+            label = "GRAVE_ESCAPE";
             #binding-cells = <0>;
-            bindings = <&kp A>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp BSPC>, <&kp DELETE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
     };
 
@@ -52,7 +52,7 @@
     &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T                               &kp Y       &kp U    &kp I     &kp O   &kp P    &kp MINUS
     &kp CAPS  &kp A    &kp S    &kp D     &kp F    &kp G                               &kp H       &kp J    &kp K     &kp L   &kp SEMI &kp SQT
     &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &kp RET         &kp RET    &kp N       &kp M    &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                                &kp LCTRL &kp RALT &kp LGUI &kp SPACE       &kp SPACE  &mo_tog 1 2 &bsdel   &kp ESC
+                                &kp LCTRL &kp RALT &kp LGUI &kp SPACE       &kp SPACE  &mo_tog 1 2 &gresc   &kp ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -76,7 +76,7 @@
     &kp TAB   &trans       &trans       &trans       &trans       &trans                               &trans   &trans   &kp UP   &trans    &trans   &trans
     &kp CAPS  &trans       &trans       &trans       &trans       &trans                               &trans   &kp LEFT &kp DOWN &kp RIGHT &trans   &trans
     &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET    &trans   &trans   &trans   &trans    &trans   &trans
-                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &trans   &bsdel   &kp ESC
+                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &trans   &gresc   &kp ESC
              >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -101,7 +101,7 @@
     &kp TAB   &trans       &trans       &trans       &trans       &trans                                &trans      &kp HOME &kp UP     &kp END    &kp PG_UP    &trans
     &kp CAPS  &trans       &trans       &trans       &trans       &kp LBKT                              &kp RBKT    &kp LEFT &kp DOWN   &kp RIGHT  &kp PG_DN    &trans
     &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET     &trans      &trans   &trans     &trans     &trans       &trans
-                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE   &mo_tog 1 2 &bsdel   &kp ESC
+                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE   &mo_tog 1 2 &gresc   &kp ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
