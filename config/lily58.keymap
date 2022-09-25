@@ -21,7 +21,7 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
-        gresc: bsdel {
+        bsdel: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
             #binding-cells = <0>;
