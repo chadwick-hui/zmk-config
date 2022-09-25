@@ -9,7 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
 / {
+    behaviors {
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -24,15 +37,15 @@
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |   Z    |   X    |   C    |   V    |   B    | ENTER  |      | ENTER  |   N    |   M    |   ,    |   .    |   /    |   \    |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | RAISE  |  BSPC  |  ESC   |
+//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | LAYER  |  BSPC  |  ESC   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &kp GRAVE &kp N1   &kp N2   &kp N3    &kp N4   &kp N5                              &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp EQUAL
-    &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T                               &kp Y   &kp U    &kp I     &kp O   &kp P    &kp MINUS
-    &kp CAPS  &kp A    &kp S    &kp D     &kp F    &kp G                               &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-    &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &kp RET         &kp RET    &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                &kp LCTRL &kp RALT &kp LGUI &kp SPACE       &kp SPACE  &to 2   &kp BSPC &kp ESC
+    &kp GRAVE &kp N1   &kp N2   &kp N3    &kp N4   &kp N5                              &kp N6      &kp N7   &kp N8    &kp N9  &kp N0   &kp EQUAL
+    &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T                               &kp Y       &kp U    &kp I     &kp O   &kp P    &kp MINUS
+    &kp CAPS  &kp A    &kp S    &kp D     &kp F    &kp G                               &kp H       &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+    &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &kp RET         &kp RET    &kp N       &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                                &kp LCTRL &kp RALT &kp LGUI &kp SPACE       &kp SPACE  &mo_tog 1 2 &kp BSPC &kp ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -48,7 +61,7 @@
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |        |        |        |        |        | ENTER  |      | ENTER  |        |        |        |        |        |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | RAISE  |  BSPC  |  ESC   |
+//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  |        |  BSPC  |  ESC   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
@@ -56,7 +69,7 @@
     &kp TAB   &trans       &trans       &trans       &trans       &trans                               &trans   &trans   &trans   &trans   &trans   &trans
     &kp CAPS  &trans       &trans       &trans       &trans       &trans                               &trans   &trans   &trans   &trans   &trans   &trans
     &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET    &trans   &trans   &trans   &trans   &trans   &trans
-                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &to 2    &kp BSPC &kp ESC
+                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &trans   &kp BSPC &kp ESC
              >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -73,7 +86,7 @@
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |        |        |        |        |        | ENTER  |      | ENTER  |        |        |        |        |        |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | RAISE  |  BSPC  |  ESC   |
+//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | LAYER  |  BSPC  |  ESC   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
@@ -81,7 +94,7 @@
     &kp TAB   &trans       &trans       &trans       &trans       &trans                                &trans      &kp HOME &kp UP     &kp END    &kp PG_UP    &trans
     &kp CAPS  &trans       &trans       &trans       &trans       &kp LBKT                              &kp RBKT    &kp LEFT &kp DOWN   &kp RIGHT  &kp PG_DN    &trans
     &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET     &trans      &trans   &trans     &trans     &trans       &trans
-                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE   &to 0       &kp BSPC &kp ESC
+                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE   &mo_tog 1 2 &kp BSPC &kp ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
