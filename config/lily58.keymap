@@ -51,37 +51,37 @@
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |   \    |   Z    |   X    |   C    |   V    | ENTER  |      | ENTER  |   B    |   N    |   M    |   ,    |   .    |   /    |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | LAYER  |  BSPC  |  ESC   |
+//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  |  BSPC  | LAYER  |  ESC   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &gresc    &kp N1   &kp N2   &kp N3    &kp N4   &kp N5                              &kp N6      &kp N7   &kp N8    &kp N9    &kp N0   &kp EQUAL
-    &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T                               &kp Y       &kp U    &kp I     &kp O     &kp P    &kp MINUS
-    &kp CAPS  &kp A    &kp S    &kp D     &kp F    &kp G                               &kp H       &kp J    &kp K     &kp L     &kp SEMI &kp SQT
-    &kp LSHFT &kp BSLH &kp Z    &kp X     &kp C    &kp V    &kp RET         &kp RET    &kp B       &kp N    &kp M     &kp COMMA &kp DOT  &kp FSLH 
-                                &kp LCTRL &kp RALT &kp LGUI &kp SPACE       &kp SPACE  &mo_tog 1 2 &bsdel   &kp ESC
+    &gresc    &kp N1   &kp N2   &kp N3    &kp N4   &kp N5                              &kp N6      &kp N7      &kp N8    &kp N9    &kp N0   &kp EQUAL
+    &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T                               &kp Y       &kp U       &kp I     &kp O     &kp P    &kp MINUS
+    &kp CAPS  &kp A    &kp S    &kp D     &kp F    &kp G                               &kp H       &kp J       &kp K     &kp L     &kp SEMI &kp SQT
+    &kp LSHFT &kp BSLH &kp Z    &kp X     &kp C    &kp V    &kp RET         &kp RET    &kp B       &kp N       &kp M     &kp COMMA &kp DOT  &kp FSLH 
+                                &kp LCTRL &kp RALT &kp LGUI &kp SPACE       &kp SPACE  &bsdel      &mo_tog 1 2 &kp ESC
             >;
         };
 
         lower_layer {
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// |   `    |  BT1   |  BT2   |  BT3   |  BT4   |  BT5   |                        |        |        |        |        |        | Power  |
+// |   `    |  DIM   | BRIGHT |        |   F5   |   F6   |                        |  BACK  |  PLAY  |  NEXT  |  MUTE  | V DOWN |  V UP  |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// | TAB    |        |        |        |        |        |                        |        |  HOME  |   ^    |  END   | PG UP  |        |
+// | TAB    |  BT1   |  BT2   |  BT3   |  BT4   |  BT5   |                        |        |  HOME  |   ^    |  END   | PG UP  |        |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
 // | CAPS   |        |        |        |        |    [   |                        |   ]    |   <-   |   v    |  ->    | PG DN  |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |        |        |        |        |        | ENTER  |      | ENTER  |        |        |        |        |        |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  |        |  BSPC  |  ESC   |
+//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  |  BSPC  |        |  ESC   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &gresc &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                         &trans   &trans   &trans   &trans    &trans    &kp K_PWR
-    &kp TAB   &trans       &trans       &trans       &trans       &trans                               &trans   &kp HOME &kp UP   &kp END   &kp PG_UP &trans
-    &kp CAPS  &trans       &trans       &trans       &trans       &kp LBKT                             &kp RBKT &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &trans
-    &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET    &trans   &trans   &trans   &trans    &trans    &trans
-                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &trans   &bsdel   &kp ESC
+    &gresc    &kp C_BRI_UP &kp C_BRI_DN &trans       &kp F5       &kp F6                               &kp C_PREV &kp C_PP &kp C_NEXT &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
+    &kp TAB   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                         &trans     &kp HOME &kp UP     &kp END    &kp PG_UP    &trans
+    &kp CAPS  &trans       &trans       &trans       &trans       &kp LBKT                             &kp RBKT   &kp LEFT &kp DOWN   &kp RIGHT  &kp PG_DN    &trans
+    &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET    &trans     &trans   &trans     &trans     &trans       &trans
+                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE  &bsdel     &trans   &kp ESC
              >;
         };
 
@@ -96,15 +96,15 @@
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // | SHIFT  |        |        |        |        |        | ENTER  |      | ENTER  |        |        |        |        |        |        |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  | LAYER  |  BSPC  |  ESC   |
+//                            |  CTRL  |  OPT   |  CMD   | SPACE  |      | SPACE  |  BSPC  | LAYER  |  ESC   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &gresc &kp C_BRI_UP &kp C_BRI_DN &trans       &kp F5       &kp F6                                &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
-    &kp TAB   &trans       &trans       &trans       &trans       &trans                                &trans      &kp HOME &kp UP     &kp END    &kp PG_UP    &trans
-    &kp CAPS  &trans       &trans       &trans       &trans       &kp LBKT                              &kp RBKT    &kp LEFT &kp DOWN   &kp RIGHT  &kp PG_DN    &trans
-    &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET     &trans      &trans   &trans     &trans     &trans       &trans
-                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE   &mo_tog 1 2 &bsdel   &kp ESC
+    &gresc    &kp C_BRI_UP &kp C_BRI_DN &trans       &kp F5       &kp F6                                &kp C_PREV  &kp C_PP    &kp C_NEXT &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
+    &kp TAB   &trans       &trans       &trans       &trans       &trans                                &trans      &kp HOME    &kp UP     &kp END    &kp PG_UP    &trans
+    &kp CAPS  &trans       &trans       &trans       &trans       &kp LBKT                              &kp RBKT    &kp LEFT    &kp DOWN   &kp RIGHT  &kp PG_DN    &trans
+    &kp LSHFT &trans       &trans       &trans       &trans       &trans       &kp RET      &kp RET     &trans      &trans      &trans     &trans     &trans       &trans
+                                        &kp LCTRL    &kp RALT     &kp LGUI     &kp SPACE    &kp SPACE   &bsdel      &mo_tog 1 2 &kp ESC
             >;
         };
     };
