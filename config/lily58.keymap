@@ -21,7 +21,7 @@
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
 // |  CLR   |   1    |   2    |   3    |   4    |   5    |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// |  TAB   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
+// |  TAB   |  BT0   |  BT1   |  BT2   |  BT3   |  BT4   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
 // |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
@@ -31,10 +31,10 @@
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &bt BT_CLR &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
-    &kp TAB    &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
-    &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
-    &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+    &bt BT_CLR &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+    &kp TAB    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+    &bt BT_CLR &bt BT_CLR   &bt BT_CLR   &bt BT_CLR   &bt BT_CLR   &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+    &bt BT_CLR &bt BT_CLR   &bt BT_CLR   &bt BT_CLR   &bt BT_CLR   &bt BT_CLR &bt BT_CLR     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
                                      &bt BT_CLR &bt BT_CLR &kp LGUI   &kp SPACE      &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
             >;
         };
