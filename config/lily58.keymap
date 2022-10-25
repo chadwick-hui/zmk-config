@@ -19,25 +19,25 @@
         default_layer {
 
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
+// |  CLR   |   1    |   2    |   3    |   4    |   5    |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-// |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
+// |  TAB   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
 // |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |                        |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
 // |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |      |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |  CLR   |
 // +--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------+
-//                            |  CLR   |  CLR   |  CLR   |  CLR   |      |  CLR   |  CLR   |  CLR   |  CLR   |
+//                            |  CLR   |  CLR   |  CMD   | SPACE  |      |  CLR   |  CLR   |  CLR   |  CLR   |
 //                            +--------+--------+--------+--------+      +--------+--------+--------+--------+
 
             bindings = <
-    &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
-    &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+    &bt BT_CLR &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+    &kp TAB    &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR                           &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
-                                     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR     &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
+                                     &bt BT_CLR &bt BT_CLR &kp LGUI   &kp SPACE      &bt BT_CLR &bt BT_CLR &bt BT_CLR &bt BT_CLR 
             >;
         };
-
+        
     };
 };
